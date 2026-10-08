@@ -1,5 +1,6 @@
 // Problem Link: https://leetcode.com/problems/two-sum/
 
+// Implemented using Map and complement finding
 function twoSum(nums: number[], target: number): number[] {
     const numsMap = new Map();
 
