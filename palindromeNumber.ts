@@ -1,5 +1,6 @@
 // Problem Link: https://leetcode.com/problems/palindrome-number/
 
+// Implemented using Reverse matching and some clever math, could have also been implemented using Two Pointers
 function isPalindrome(x: number): boolean {
   if (x < 0) return false;
 
