@@ -1,5 +1,6 @@
 // Problem Link: https://leetcode.com/problems/valid-parentheses/description/
 
+// Implemented using stack solution
 function isValid(s: string): boolean {
   if (s.length % 2 === 1) return false;
 
