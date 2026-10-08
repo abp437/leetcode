@@ -1,5 +1,6 @@
 // Problem Link: https://leetcode.com/problems/roman-to-integer/
 
+// Implemented using current and previous character value comparisons:
 function romanToInt(s: string): number {
   const values: Record<string, number> = {
     I: 1,
@@ -42,7 +43,7 @@ function romanToInt(s: string): number {
   return accumulator;
 }
 
-// Older Solution:
+// Older Solution, comparing character matching of 2 subtractive chars:
 function romanToInt(s: string): number {
   const values: Record<string, number> = {
     // Additive
