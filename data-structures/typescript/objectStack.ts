@@ -34,9 +34,9 @@ stack.push(30);
 
 console.log(stack.size); // 3
 console.log(stack.peek()); // 30
-console.log(stack.pop());  // 30
+console.log(stack.pop()); // 30
 console.log(stack.peek()); // 20
 console.log(stack.size); // 2
-console.log(stack.pop());  // 20
-console.log(stack.pop());  // 10
-console.log(stack.pop());  // undefined
+console.log(stack.pop()); // 20
+console.log(stack.pop()); // 10
+console.log(stack.pop()); // undefined
