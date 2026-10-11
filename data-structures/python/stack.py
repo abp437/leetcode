@@ -4,7 +4,7 @@ T = TypeVar("T")
 
 
 class Stack(Generic[T]):
-    def __init__(self):
+    def __init__(self) -> None:
         self.items: list[T] = []
 
     def push(self, item: T) -> None:
@@ -13,11 +13,13 @@ class Stack(Generic[T]):
     def pop(self) -> T | None:
         if not self.items:
             return None
+
         return self.items.pop()
 
     def peek(self) -> T | None:
         if not self.items:
             return None
+
         return self.items[-1]
 
     @property
