@@ -9,3 +9,7 @@ Dynamic Programming:
   The basic thing which I know about Dynamic Programming is that we solve smaller problems and then combine them into a larger solution.
   There are techniques to Dynamic Programming like - Memoization, Tabulation, Grid, Constant & Non Constant Transitions, 2 sequences, Knapsack, etc.
   In DP, avoid repeated calculations of already computed steps. We tackle that by storing the already computed results somewhere using memoization. The next thing is that we use recusrion a lot in DP problems. We generally use Hashmap for storing the memoized values. We only perform computations when there's no value found for the corresponding calculation in the memoized data. We have to maintain base cases for the recursion to stop at some point. It's very similar to the read through strategy we use in Redis storage for system design for frequently accessed, derived expensive data. Memoization is recursion with memory.
+
+  Recursion breaks a problem into smaller subproblems.
+  Memoization avoids solving the same subproblem repeatedly.
+  Dynamic programming is an approach for solving problems with overlapping subproblems and optimal substructure; it can use memoization (top-down) or tabulation (bottom-up).

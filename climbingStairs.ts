@@ -1,5 +1,7 @@
 // Recursive
 function recursiveClimbStairs(n: number): number {
+  if (n < 0) throw new Error("n must be non-negative");
+
   const computed: { [key: number]: number } = { 1: 1, 2: 2 };
 
   const computeSteps = (num: number): number => {
@@ -18,6 +20,7 @@ function recursiveClimbStairs(n: number): number {
 
 // Iterative
 function iterativeClimbStairs(n: number): number {
+  if (n < 0) throw new Error("n must be non-negative");
   if (n < 1) return 0;
 
   const preComputed: number[] = [1, 2];
