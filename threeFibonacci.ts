@@ -27,6 +27,26 @@ function threeFibonacciSum(n: number): boolean {
   return false;
 }
 
+function tabulationThreeSumFibonacci(n: number): boolean {
+  if (n < 0) throw new Error("n must be non-negative");
+
+  const series = [0, 1, 1];
+
+  if (n < 2) return false;
+  if (n === 2) return true;
+
+  for (let i = 2; i < n; i++) {
+    const lastSum = series[i - 1] + series[i - 2];
+    series[i] = lastSum;
+    const currentSum = series[i] + lastSum;
+
+    if (currentSum > n) break;
+    if (currentSum === n) return true;
+  }
+
+  return false;
+}
+
 const threeFibonacciSumTestCases = [0, 1, 2, 3, 4, 5, 6, 7, 10, 30];
 
 const expectedResults: Record<number, boolean> = {
@@ -44,10 +64,19 @@ const expectedResults: Record<number, boolean> = {
 
 for (const n of threeFibonacciSumTestCases) {
   const result = threeFibonacciSum(n);
+  const tabulation = tabulationThreeSumFibonacci(n);
   const expected = expectedResults[n];
 
-  const passed = result === expected;
-  const status = passed ? `${GREEN}PASS${RESET}` : `${RED}FAIL${RESET}`;
+  const passed =
+    result === expected &&
+    tabulation === expected &&
+    result === tabulation;
 
-  console.log(`n=${n}: result=${result}, expected=${expected} ${status}`);
+  const status = passed
+    ? `${GREEN}PASS${RESET}`
+    : `${RED}FAIL${RESET}`;
+
+  console.log(
+    `n=${n}: sequence=${result}, tabulation=${tabulation}, expected=${expected} ${status}`,
+  );
 }
