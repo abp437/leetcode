@@ -13,3 +13,4 @@ Dynamic Programming:
   Recursion breaks a problem into smaller subproblems.
   Memoization avoids solving the same subproblem repeatedly.
   Dynamic programming is an approach for solving problems with overlapping subproblems and optimal substructure; it can use memoization (top-down) or tabulation (bottom-up).
+  Whenever we need to find the optimum solution out of the many possible options. DP is a good option. Such as the KnapSack problem or Min Cost Climbing Stairs problem or even find how many paths to a cell from a grid.
