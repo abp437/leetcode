@@ -7,3 +7,8 @@ Any method which appears inside a class with __ at the beginning and end is know
 Don't use `assert` for assertions, because they can be turned off when we run our code in Optimized mode.
 We can run Python in Optimized mode with `python3 -O`.
 Instead we should `raise` TypeError and ValueError separately for implementing type and value validations.
+
+We can directly access class variables from objects themselves, because, the object looks up the hierarchy of the scope and looks up to find out something which is not found within.
+Similar to magic methods we also have magic attributes, which are denoted by __ as well. An example is `__dict__` which tells us the attributes associated to that object. It looks at those attributes at the immediate level only. Not up the hierarchy.
+
+We can add class methods for Python classes using @classmethod decorator. Over here, the first arg which goes for the method isn't `self`, instead it's `cls`, which tells that we are referencing the class and not the object to be instantiated.
