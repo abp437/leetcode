@@ -4,7 +4,7 @@ A class is just a custom way to denote a data type of our own. That data type in
 The `__init__` method is the constructor method in Python. It's also a Magic method.
 Magic methods are also known as Dunder methods which stands for Double Underscore methods.
 Any method which appears inside a class with __ at the beginning and end is known as a Magic method/Dunder method.
-The __str__ dunder method has got more preference with the __repr__ as fallback
+The __str__ dunder method has got to be more user friendly whereas the __repr__ method needs to be more dev friendly.
 
 Don't use `assert` for assertions, because they can be turned off when we run our code in Optimized mode.
 We can run Python in Optimized mode with `python3 -O`.
@@ -23,3 +23,39 @@ A static method is simply a function placed inside a class because it's logicall
 Static methods don't take self or cls as the first arg, because they are generally independent of a class's state. It's denoted with `@staticmethod` decorator.
 
 Through basic inheritance, we can simply make attributes and methods inherited into the sub class from the parent class.
+Python supports both - Single & Multiple inheritance. But there's no strict convention decided which to use. We generally prefer simple inheritance hierarchies, use composition when it fits better, and use multiple inheritance selectively.
+  Single Inheritance - for a genuine "is-a" relationship
+  Multiple Inheritance - for a genuine "has-a" relationship
+
+Following are the types of arguments which we can use in Python:
+  Positional arguments: Item("Phone", 1000, 5) => Traditional, order matters
+  Keyword arguments: Item(name="Phone", price=1000, quantity=5) => Order doesn't matter, matches based on arg & param name
+  Arbitrary keyword arguments: def func(**kwargs) => Takes in a dynamic number of arguments and Python converts them into a dictionary for access inside the func
+
+Decorators add extra functionality to any function based on the type of the decorator we attach to it.
+For example, to add getters and setters, we need to use @property, @field_name.setter decorators respectively. Getter, Setter methods are more exclusively used for adding validations while the attributes are being changed or initialized.
+There's also this convention of using `__` before field names in getter and setter to avoid it being overriden from the outside.
+
+4 Pillars of OOP:
+  Encapsulation:
+    Hide data, expose only essential. Hide both - attributes & methods.
+    Bundle data and methods together inside a class.
+    Control how an object's internal state is accessed or modified.
+
+  Abstraction:
+    Hide the complexity or unnecessary details and expose a simple interface to interact with.
+    In Python we don't have access modifiers like private or public which we generally have in other programming languages.
+    But here, we have to follow the convention of prefixing __ in front of attributes or methods to keep them private.
+    For protected, meaning sub class usage, we have to prefix a single _ for attributes and methods.
+    Please note that in Python, nothing is completely inaccessible, those are just ways to communicate to devs for quick understanding. There are ways to bypass it.
+
+  Inheritance:
+    Allows a class to reuse or extend the behavior of another class.
+    Python supports single and multiple inheritance.
+
+  Polymorphism:
+    Allows different objects to respond to the same operation in their own ways.
+    We have the common use case of overriding the Dunder methods in the individual classes.
+    It's basically for responding to different data types with the same function. Best example is the `len` function.
+    In Python, this commonly works through duck typing and method overriding.
+    It's especially valuable for sub classes, where we have a base implementation of a method and then change the implementation based on the sub class requirements.
