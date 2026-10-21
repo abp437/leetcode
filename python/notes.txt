@@ -1,0 +1,9 @@
+Just like in Ruby, almost everything in Python is an object.
+A class is just a custom way to denote a data type of our own. That data type in turn uses the primitive data types.
+`self` is always the first argument which goes to any method in a class.
+The `__init__` method is the constructor method in Python. It's also a Magic method.
+Any method which appears inside a class with __ at the beginning and end is known as a Magic method.
+
+Don't use `assert` for assertions, because they can be turned off when we run our code in Optimized mode.
+We can run Python in Optimized mode with `python3 -O`.
+Instead we should `raise` TypeError and ValueError separately for implementing type and value validations.
