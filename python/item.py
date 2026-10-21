@@ -41,10 +41,22 @@ class Item:
 
                 cls(name, float(price), int(quantity))
 
+    @staticmethod
+    def is_int(num) -> bool:
+        return isinstance(num, int)
+
     # Overrides the default way of displaying the object in CLI.
-    # Instead of showing pointer to object, we provide a custom string to represent it.
+    # Instead of showing memory address of the object, we provide a custom string to represent it.
+    # Similar is the __str__ dunder method, but the __str__ has got more preference with the __repr__ as fallback
     def __repr__(self) -> str:
-        return self.name
+        return f"From repr: {self.name}"
+
+    def __str__(self) -> str:
+        return f"From str: {self.name}, {self.price}, {self.quantity}"
+
+    # This method will operate when we try to add 2 objects using the + operator of this class to each other
+    def __add__(self, other) -> str:
+        return f"{self.name} + {other.name}"
 
     def apply_discount(self) -> None:
         self.price = round((self.price - (self.price * self.discount_rate)), 2)
@@ -53,43 +65,50 @@ class Item:
         return self.price * self.quantity
 
 
-item = Item("Phone", 75.02, 3)
+phone = Item("Phone", 75.02, 3)
 
-print(type(item))
-print(type(item.price))
-print(type(item.quantity))
-print(type(item.name))
-print(item.price)
-print(item.calculate_price())
+print(type(phone))
+print(type(phone.price))
+print(type(phone.quantity))
+print(type(phone.name))
+print(phone.price)
+print(phone.calculate_price())
 
 print("hello".upper())
 print("hello".isalnum())
 
 # Class variables
 print(Item.discount_rate)
-item.apply_discount()
-print(item.price)
+phone.apply_discount()
+print(phone.price)
 
-item2 = Item("Table", 22321, 5)
+table = Item("Table", 22321, 5)
 # This change doesn't apply for the full class, it applies only to this instance
 # Subsequent instances will pick up values from the class variable itself
-item2.discount_rate = 0.3
-item2.apply_discount()
-print(item2.price)
+table.discount_rate = 0.3
+table.apply_discount()
+print(table.price)
 
-item3 = Item("Chair", 383, 8)
-item3.apply_discount()
-print(item3.price)
+chair = Item("Chair", 383, 8)
+chair.apply_discount()
+print(chair.price)
 
+print(chair + table)
+
+# This will call the __repr__
 print(Item.all)
+
 
 for inst in Item.all:
-    print(inst.name)
-
-# Testing type & value validations
-# item4 = Item("TV", -23, -35)
-# print(item4.calculate_price())
-
+    # This will call the __str__
+    print(inst)
 
 Item.instantiate_from_csv()
+# This will call the __repr__
 print(Item.all)
+
+print(Item.is_int("2"))
+
+# Testing type & value validations
+testing = Item("TV", -23, -35)
+print(testing.calculate_price())

@@ -1,14 +1,25 @@
 Just like in Ruby, almost everything in Python is an object.
 A class is just a custom way to denote a data type of our own. That data type in turn uses the primitive data types.
-`self` is always the first argument which goes to any method in a class.
+`self` is always the first argument which goes to any method in a class. `self` is the actual instance of a class which is being operated upon.
 The `__init__` method is the constructor method in Python. It's also a Magic method.
-Any method which appears inside a class with __ at the beginning and end is known as a Magic method.
+Magic methods are also known as Dunder methods which stands for Double Underscore methods.
+Any method which appears inside a class with __ at the beginning and end is known as a Magic method/Dunder method.
+The __str__ dunder method has got more preference with the __repr__ as fallback
 
 Don't use `assert` for assertions, because they can be turned off when we run our code in Optimized mode.
 We can run Python in Optimized mode with `python3 -O`.
 Instead we should `raise` TypeError and ValueError separately for implementing type and value validations.
+Just like TypeScript, we can use type annotations in Python to make it behave a bit more stricter than the flexibility it generally allows.
+For Example:
+  def __init__(self, name: str, price: float, quantity: int = 0) -> None:
 
 We can directly access class variables from objects themselves, because, the object looks up the hierarchy of the scope and looks up to find out something which is not found within.
 Similar to magic methods we also have magic attributes, which are denoted by __ as well. An example is `__dict__` which tells us the attributes associated to that object. It looks at those attributes at the immediate level only. Not up the hierarchy.
 
-We can add class methods for Python classes using @classmethod decorator. Over here, the first arg which goes for the method isn't `self`, instead it's `cls`, which tells that we are referencing the class and not the object to be instantiated.
+We can add class methods for Python classes using `@classmethod` decorator. Over here, the first arg which goes for the method isn't `self`, instead it's `cls`, which tells that we are referencing the class and not the object to be instantiated.
+A class method works with the class and can create or modify class-level data. It's commonly used for alternative constructors, such as loading objects from a CSV file.
+
+A static method is simply a function placed inside a class because it's logically related to that class.
+Static methods don't take self or cls as the first arg, because they are generally independent of a class's state. It's denoted with `@staticmethod` decorator.
+
+Through basic inheritance, we can simply make attributes and methods inherited into the sub class from the parent class.
