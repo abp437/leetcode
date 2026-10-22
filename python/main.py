@@ -56,3 +56,14 @@ print(Item.is_int("2"))
 
 phone = Phone(23.44, 45)
 print(phone)
+
+# We know that \ is an escape char so, in order to not escape it, we use `raw strings`, which starts with "r"
+# Similar to "f" which is used for formatted strings
+raw_str = r"C:\this\name"
+print(raw_str)
+
+# Fibonacci Series
+a, b = 0, 1
+while b < 50:
+    print(a)
+    a, b = b, a + b

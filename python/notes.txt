@@ -1,3 +1,8 @@
+The Python language was named after Monty Python, not the Python reptile!
+The Python interpreter is usually situated in `/usr/bin/local` from where we generally run Python programs.
+In the Python console we can access the last used expression with _
+UTF-8 is the default encoding for Python files.
+
 Just like in Ruby, almost everything in Python is an object.
 A class is just a custom way to denote a data type of our own. That data type in turn uses the primitive data types.
 `self` is always the first argument which goes to any method in a class. `self` is the actual instance of a class which is being operated upon.
@@ -72,5 +77,27 @@ Fun Fact:
     Node.js => Node-API native addons
     Browser JS => WebAssembly, Tools such as Emscripten compile C into WebAssembly, which JavaScript can load and interact with.
     Java => Java uses JNI (Java Native Interface) to call native C or C++ code.
-    Go => cgo to include and integarte C language code.
+    Go => cgo to include and integrate C language code.
+  This is also called Foreign-function interfacing (FFI), native extensions, and language interoperability.
   This is so Revolutionary!
+
+Python Strings are immutable. Lists are mutable. But like lists, strings can be accessed via index, but not modified.
+Multiple line string literals can start be denoted with """, it can also be denoted with ''', but the convention is """
+The last character of string begins from -1. Just like Golang, we can slice strings using [:] syntax.
+For example: word[:2], word[0:2], word[2:5], word[4:]
+
+Python Lists similar to strings can be indexed and sliced. Lists are like arrays which we have in JS. They can contain elements of different data types.
+Lists in Python are pass by reference and not pass by type. So, when we do
+rgb = ['Red', 'Green', 'Blue']
+rgba = rgb
+rgba.append('Alpha')
+print(rgb)
+>>> ['Red', 'Green', 'Blue', 'Alpha']
+
+To maintain a copy of list, we need to use the following:
+wrestlers = ['Stone Cold', 'The Rock', 'The Undertaker', 'Triple H']
+attitude_era = wrestlers[:]
+
+In Python we can make multiple assignments in a single line:
+a, b = 0, 1
+In multiple assignments, the expressions on the RHS are evaluated and assigned from Left to Right.
