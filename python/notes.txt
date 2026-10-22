@@ -59,3 +59,18 @@ There's also this convention of using `__` before field names in getter and sett
     It's basically for responding to different data types with the same function. Best example is the `len` function.
     In Python, this commonly works through duck typing and method overriding.
     It's especially valuable for sub classes, where we have a base implementation of a method and then change the implementation based on the sub class requirements.
+
+C language integration:
+  A powerful feature of Python is that we can write performance critical stuff in C and then integrate with Python programs!
+  For Example, we have written basic calc functions in the file `basic_calc.c` then we have compiled it as a `.so` - Shared Object file and then called that as a library in Python.
+    gcc -shared -fPIC -o basic_calc.so ./basic_calc.c
+  Then we can simply outsource critical stuff to C, which is the most performant language.
+  Similarly, we can also inegrate Go if required. The choice is ours.
+
+Fun Fact:
+  We can also integrate C in Go, Java, NodeJS, Browser JS with respective APIs or compatibility tools.
+    Node.js => Node-API native addons
+    Browser JS => WebAssembly, Tools such as Emscripten compile C into WebAssembly, which JavaScript can load and interact with.
+    Java => Java uses JNI (Java Native Interface) to call native C or C++ code.
+    Go => cgo to include and integarte C language code.
+  This is so Revolutionary!
