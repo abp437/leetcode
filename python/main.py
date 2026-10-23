@@ -67,3 +67,20 @@ a, b = 0, 1
 while b < 50:
     print(a)
     a, b = b, a + b
+
+x: int = int(input("Enter a number: "))
+
+if not isinstance(x, int):
+    print("Please enter a number")
+elif x % 2 == 0:
+    print("Even number")
+else:
+    print("Odd number")
+
+match x:
+    case int() if x % 2 == 0:
+        print("Even number from match case")
+    case int():
+        print("Odd number from match case")
+    case _:
+        print("Default Case")

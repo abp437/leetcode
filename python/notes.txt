@@ -82,7 +82,7 @@ Fun Fact:
   This is so Revolutionary!
 
 Python Strings are immutable. Lists are mutable. But like lists, strings can be accessed via index, but not modified.
-Multiple line string literals can start be denoted with """, it can also be denoted with ''', but the convention is """
+Multiple line string literals known as Document Strings can be denoted with """, it can also be denoted with ''', but the convention is """. Writing Doc Strings is a good habit.
 The last character of string begins from -1. Just like Golang, we can slice strings using [:] syntax.
 For example: word[:2], word[0:2], word[2:5], word[4:]
 
@@ -100,4 +100,19 @@ attitude_era = wrestlers[:]
 
 In Python we can make multiple assignments in a single line:
 a, b = 0, 1
-In multiple assignments, the expressions on the RHS are evaluated and assigned from Left to Right.
+In multiple assignments, the expressions on the RHS are all evaluated first and then assigned from Left to Right.
+
+In Python we don't have the traditional switch statement, instead we have the `match` statement. It also behaves like the switch statement, but if-else clause is more preferred. The match statement is actually, very distinct from the switch statement in other languages, it doesn't resort to expression evaluation, it resorts to pattern matching. Much like it's done in Rust or Haskell.
+
+For iterations we can use the `for` loop, which can help us iterate over lists, strings and even dictionaries(Key-value pairs in Python are known as Dictionary)
+The iteration syntax is not like the typical for loop in C or JS. It's something like this:
+  words = ["Stone", "Cold", "Steve", "Austin"]
+  for w in words:
+    print(w)
+
+Iterating over dictionary, we can get the key and value iteration:
+  diction = {"Attitude Era": "Stone Cold Steve Austin", "Ruthless Agression Era": "John Cena", "Latest Era": "Cody Rhoades"}
+  for era, wrestler in diction.items():
+    print(f'{era}: {wrestler}')
+
+There's also the `while` loop for iteration.
