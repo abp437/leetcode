@@ -1,2 +1,19 @@
+# Python Cache files
 __pycache__
+
+# Shared Object files
 basic_calc.so
+
+# Compilation Step files
+calc_funcs.i
+calc_funcs.o
+calc_funcs.s
+calc_funcs.bc
+main.i
+main.o
+main.s
+main.bc
+
+# Executables
+calc_funcs
+main
