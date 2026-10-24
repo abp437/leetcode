@@ -18,6 +18,12 @@ Dynamic Programming:
 Compilation Steps:
   GCC - Stands for GNU Compiler Collection. It has compilers for C, C++, Objective C & even Go.
   Thus we can even compile Golang code from GCC, not only the native Go compiler.
+  We compile different languages using:
+    gcc => C
+    g++ => C++
+    gfortran => Fortran
+    gccgo => Go
+
   When we compile using GCC, it goes through 4 steps.
   Steps:
     Pre-processor -> Compiler -> Assembler -> Linker
@@ -45,4 +51,16 @@ Compilation Steps:
     Compiling from multiple files. One file is the assembly code output from above step, the next is the source code file which uses that assembly code, which is combined to a single executable file:
       gcc ./calc_funcs.s ./main.c -o main
     Finally we produce a single `main` executable file.
-  This is Revolutionary!
+  We can similarly compile programs from different languages into assembly and then link those assembly files into a single executable. Linker does the job of linking the assembly codes into the executable. It doesn't matter if the code has come from a different compilation chain altogether. So, we can compile in Go's native compiler generate the assembly and then link it with C's assembly and produce final executable.
+  We generally mix up multiple languages in a single project for performance reasons or not reinventing the wheel of if some library is already developed in other language, we can just use it for us.
+  Thus we mostly use up C/C++ in Rust code or even in Python code just like we have pandas & numpy using up C for performance critical calculations and using Python only as programming interface.
+  Even that is not all Disneyland. There might arise compatibility problems later on when assemblers of different languages aren't exactly compatible or produce different results when interacting with the hardware.
+  But anyways, this is Revolutionary! A step forward in my engineering knowledge.
+
+Recall that why do we need to set PATH variables?
+  We need to set PATH variables for Java, Python, Golang, Node or PHP and even for Android emulators and SDKs.
+  The reason being that the terminal/shell fetches the paths of the executables when it encounters unknown commands in the terminal, if it knows the path then it will call the appropriate executable else throw an unknown command error. We thus actually provide the absolute paths of the executables related to those programming languages or tools in order for them to call the necessary executables.
+  When we run interpreted languages we call the interpreter which is actually an executable file or binary!
+  The terminal searches the path to the interpreter's binary and then passes on the source files of the programs to execute as arguments to the interpreter. Just like we pass in for Python or Node or others as well.
+  The shell launches the Python executable and passes Python file as an argument. The Python runtime processes the source code, typically compiling it to bytecode internally before execution.
+  The source file is loaded onto the heap memory and then converted to machine code an then finally executed.
