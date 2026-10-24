@@ -61,6 +61,49 @@ Recall that why do we need to set PATH variables?
   We need to set PATH variables for Java, Python, Golang, Node or PHP and even for Android emulators and SDKs.
   The reason being that the terminal/shell fetches the paths of the executables when it encounters unknown commands in the terminal, if it knows the path then it will call the appropriate executable else throw an unknown command error. We thus actually provide the absolute paths of the executables related to those programming languages or tools in order for them to call the necessary executables.
   When we run interpreted languages we call the interpreter which is actually an executable file or binary!
+  For example the Python interpreter is written in C, NodeJS is written in C++.
   The terminal searches the path to the interpreter's binary and then passes on the source files of the programs to execute as arguments to the interpreter. Just like we pass in for Python or Node or others as well.
   The shell launches the Python executable and passes Python file as an argument. The Python runtime processes the source code, typically compiling it to bytecode internally before execution.
   The source file is loaded onto the heap memory and then converted to machine code an then finally executed.
+  Following this chain of thought, we can even add our own custom features to existing programming languages or even create our own programming language from writing our own compiler or extending other's interpreter, etc. So, essentially when we run a python script we actually run a C program and load our scripts onto that executable. We can write an interpreter, a compiler, a transpiler, a runtime, or extend existnig ones.
+  Fun fact to know that trees are a very essential data structure to know about how languages are parsed. Because parsers often represent source code using an abstract syntax tree (AST).
+
+Compiler:
+  A compiler is a program that translates source code into another representation, such as machine code, bytecode, or an intermediate representation.
+  Examples:
+    C compiler: C source => machine-specific object code.
+    Go compiler: Go source => native machine code.
+    Java compiler (javac): Java source => JVM bytecode.
+
+Interpreter:
+  An interpreter is a program that executes code by processing its instructions or an intermediate representation.
+  An interpreter may execute source code directly, or it may first parse or compile the source into an intermediate form.
+  Examples:
+    CPython executes Python bytecode.
+    A JavaScript engine executes JavaScript using interpretation and compilation techniques.
+
+Transpiler:
+  A transpiler translates code from one programming language or source-level representation into another, usually at a similar level of abstraction.
+  Examples:
+    TypeScript => JavaScript.
+    Babel: ES6 => ES5
+    A custom language => C code.
+
+Runtime:
+  A runtime is the environment and supporting machinery needed while a program executes.
+  The machinery that supports a running program.
+  It may provide memory management, garbage collection, standard libraries, exception handling, thread scheduling, and other services.
+  Node.js provides the environment and the machinery needed to execute JavaScript programs outside a web browser.
+  Examples:
+    Python runtime.
+    Java Virtual Machine (JVM).
+    Node.js runtime.
+    Go runtime.
+
+  NodeJS Runtime components:
+    V8 JavaScript engine: Parses, compiles, and executes JavaScript.
+    Node.js APIs: File access, networking, timers, streams, and more.
+    Event loop and asynchronous I/O: Coordinates callbacks and asynchronous operations, with support from libraries such as libuv.
+
+    When the above components are combined together we can execute JS code outside the browser.
+    Node.js connects your JavaScript code to operating-system capabilities through its runtime APIs and underlying native implementation.
