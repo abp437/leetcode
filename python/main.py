@@ -2,6 +2,7 @@ from item import Item
 from phone import Phone
 
 phone = Item("Phone", 75.02, 3)
+print(f"Class type: {type(phone)}")
 
 # Calls the setter method
 phone.name = "New Phone"

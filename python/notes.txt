@@ -140,6 +140,7 @@ Dictionaries:
   Can be nested.
   Iterable with for .. in ...items() loop.
   Dictionaries, just like lists are pass by reference, not values. We need to use the `.copy()` method.
+  They can even maintain the order in which the items were inserted for popping.
 
 Sets:
   Just like in any other language, we can have unique values stored in a set.
@@ -151,3 +152,5 @@ We can mix lists, tuples, and dictionaries! Just like we need in actual programm
 Python is generally not very tolerant of non-existent things in lists, tuples, dictionaries in general. It's true for indexes and elements as well.
 In Python there's a peculiar way to check existence of elements inside collections like lists, tuples, dictionaries, sets.
 We mostly use `if 'something' in some_collection`
+Also, we generally clear out all existing items from collections using the usually attached `clear` method to each of it.
+Whenever we pop elements from a list or a dict, then that value is also returned to us.
