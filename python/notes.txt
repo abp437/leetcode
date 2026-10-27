@@ -121,6 +121,7 @@ Lists:
   Lists in Python can allow different data types to exist in them.
   Indexes start from 0 as usual. We can access the last element using list_name[-1], however we can run into range index error once we cross the last index, if we continue accessing larger than list length.
   Can be nested.
+  Iterable with for .. in .. loop.
 
 Tuples:
   Tuples are like lists in Python, but they are immutable. It can contain multiple items like lists do.
@@ -129,10 +130,24 @@ Tuples:
   We can slice tuples as well.
   Tuples can be more efficient in terms of memory and when we are working with large data, because, Python makes internal optimizations to it.
   Can be nested.
+  Iterable with for .. in .. loop.
 
-There are built in constructor functions such as list(), tuple().
+There are built in constructor functions such as list(), tuple(), set(), dict().
 We can convert lists into tuples and vice-versa.
 
 Dictionaries:
   These are key-value pairs, which are mutable. Just like JS object equivalents.
   Can be nested.
+  Iterable with for .. in ...items() loop.
+  Dictionaries, just like lists are pass by reference, not values. We need to use the `.copy()` method.
+
+Sets:
+  Just like in any other language, we can have unique values stored in a set.
+  We can even have set functions like subset, union, intersection, difference on sets.
+  We can even merge sets like we do merge dictionaries.
+  Sets are also pass by reference.
+
+We can mix lists, tuples, and dictionaries! Just like we need in actual programming projects and web apps.
+Python is generally not very tolerant of non-existent things in lists, tuples, dictionaries in general. It's true for indexes and elements as well.
+In Python there's a peculiar way to check existence of elements inside collections like lists, tuples, dictionaries, sets.
+We mostly use `if 'something' in some_collection`
