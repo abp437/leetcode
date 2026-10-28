@@ -174,3 +174,16 @@ Exceptions:
   We can also have a else block when no exceptions have occurred.
   `finally` block will always be executed when the try block and execption block logic is already executed.
   We can also create our own custom exceptions and classes for it.
+
+Functions:
+  Functions in Python are first class objects, which means functions can be defined within another functions, passed as an argument to another function & even returned from other functions.
+
+Decorators:
+  There are 2 types of decorators, function and class decorators.
+  A decorator is a function that takes another function as an argument that extends the behavior of the function without explicitly modifying it.
+  Since functions are first class objects, we can effectively define our own decorator functions and then use those as mechanisms to extend fucntionalities of other functions.
+  Already existing and known decorators we use in OOP are @staticmethod, @classmethod
+
+Positional & Keyword Args:
+  We use the positional and keyword args. It's generally denoted with *args, **kwargs.
+  We can use as many args and kwargs - Keyword Args as we want.
