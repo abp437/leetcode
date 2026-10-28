@@ -21,6 +21,7 @@ dosomething()
 
 # Decorators with arguments and return values
 def decorator_with_args(func):
+    # The below line preserves the original function's name, docstring, and other metadata.
     @functools.wraps(func)
     def wrapper(*args, **kwargs):
         print("Hello, World!")
@@ -41,8 +42,12 @@ print(execute_decorator.__name__)
 
 
 # Actually useful decorator
-def repeat_times(num_of_times):
+def repeat_times(num_of_times: int):
+    if type(num_of_times) is not int or num_of_times < 1:
+        raise ValueError("num_of_times must be a positive integer")
+
     def decorator_repeat(func):
+        # The below line preserves the original function's name, docstring, and other metadata.
         @functools.wraps(func)
         def wrapper(*args, **kwargs):
             result = None
