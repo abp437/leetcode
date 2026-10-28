@@ -122,6 +122,9 @@ Lists:
   Indexes start from 0 as usual. We can access the last element using list_name[-1], however we can run into range index error once we cross the last index, if we continue accessing larger than list length.
   Can be nested.
   Iterable with for .. in .. loop.
+  There's an awesome way to populate a new list using List comprehension:
+    a = [12, 34, 5, 6, 7]
+    c = [x for x in a if x % 2 == 0]
 
 Tuples:
   Tuples are like lists in Python, but they are immutable. It can contain multiple items like lists do.
@@ -154,3 +157,14 @@ In Python there's a peculiar way to check existence of elements inside collectio
 We mostly use `if 'something' in some_collection`
 Also, we generally clear out all existing items from collections using the usually attached `clear` method to each of it.
 Whenever we pop elements from a list or a dict, then that value is also returned to us.
+Typecasting to list using the `list()` is a pretty standard Python construct.
+
+Iterators:
+  There's a module called itertools which is a collection for handling iterators, which are basically data types which can be used in a for loop.
+  The most common iterator is the list.
+
+Lambdas:
+  Lambdas are small, anonymous, one line functions, which has an input and does some expression and produces an output.
+  A Lambda is just a terser way to declare a function, that's all. Instead of the traditional def keyword.
+  Lambdas use implicit returns, no need of the return keyword over here.
+  We use Lambdas extensively in map, reduce, filter functions. These functions are very similar to the JS counterparts, just we include lambdas in it instead of full fledged defs
