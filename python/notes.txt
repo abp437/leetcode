@@ -167,4 +167,10 @@ Lambdas:
   Lambdas are small, anonymous, one line functions, which has an input and does some expression and produces an output.
   A Lambda is just a terser way to declare a function, that's all. Instead of the traditional def keyword.
   Lambdas use implicit returns, no need of the return keyword over here.
-  We use Lambdas extensively in map, reduce, filter functions. These functions are very similar to the JS counterparts, just we include lambdas in it instead of full fledged defs
+  We use Lambdas extensively in map, reduce, filter functions. These functions are very similar to the JS counterparts, just we include lambdas in it instead of full defs
+
+Exceptions:
+  While handling exceptions we need to know the type of exceptions we will be handling beforehand. We can also handle all exceptions in one generic Exception block. But instead, handling different types of exceptions separately is much more preferred.
+  We can also have a else block when no exceptions have occurred.
+  `finally` block will always be executed when the try block and execption block logic is already executed.
+  We can also create our own custom exceptions and classes for it.
