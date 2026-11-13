@@ -1,4 +1,4 @@
-from behaviors.flying.fly_with_wings import FlyWithWings
+from behaviors.flying.fly_rocket_powered import FlyRocketPowered
 from behaviors.quacking.squeak import Squeak
 from decoy_duck import DecoyDuck
 from mallard_duck import MallardDuck
@@ -20,7 +20,7 @@ def main() -> None:
     decoy.perform_fly()
     decoy.perform_quack()
     print("I'm changing behavior")
-    decoy.set_fly_behavior(FlyWithWings())
+    decoy.set_fly_behavior(FlyRocketPowered())
     decoy.set_quack_behavior(Squeak())
     decoy.perform_fly()
     decoy.perform_quack()
