@@ -65,6 +65,18 @@ There's also this convention of using `__` before field names in getter and sett
     In Python, this commonly works through duck typing and method overriding.
     It's especially valuable for sub classes, where we have a base implementation of a method and then change the implementation based on the sub class requirements.
 
+Duck Typing in Python, Ruby:
+  The philosophy is:
+    If it walks like a duck and quacks like a duck, it's a duck.
+  In programming terms, we care about what an object can do, rather than its actual type or inheritance hierarchy.
+  Interfaces are contracts which generally have a set of function signatures in them.
+  Any class which implements that interface must have concrete implementations of all those methods defined in the interface.
+  Python, just like Ruby doesn't have explicit `interface` or `implements` keywords, with the lack of those keywords, we have to rely on Duck Typing logic.
+  Both languages support duck typing, where an object's suitability is determined by the operations it supports rather than by its declared type.
+  There are 2 things which Python provides to achieve this:
+    Protocol
+    ABC - Abstract Base Class
+
 C language integration:
   A powerful feature of Python is that we can write performance critical stuff in C and then integrate with Python programs!
   For Example, we have written basic calc functions in the file `basic_calc.c` then we have compiled it as a `.so` - Shared Object file and then called that as a library in Python.
