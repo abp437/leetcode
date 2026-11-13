@@ -1,3 +1,5 @@
+from behaviors.flying.fly_with_wings import FlyWithWings
+from behaviors.quacking.squeak import Squeak
 from decoy_duck import DecoyDuck
 from mallard_duck import MallardDuck
 from redhead_duck import RedheadDuck
@@ -11,6 +13,18 @@ def main() -> None:
         duck.display()
         duck.perform_fly()
         duck.perform_quack()
+
+    print("=====================")
+    decoy = ducks[-1]
+    decoy.display()
+    decoy.perform_fly()
+    decoy.perform_quack()
+    print("I'm changing behavior")
+    decoy.set_fly_behavior(FlyWithWings())
+    decoy.set_quack_behavior(Squeak())
+    decoy.perform_fly()
+    decoy.perform_quack()
+    print("=====================")
 
 
 if __name__ == "__main__":
