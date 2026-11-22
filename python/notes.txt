@@ -130,7 +130,7 @@ Fun Fact:
   This is also called Foreign-function interfacing (FFI), native extensions, and language interoperability.
   This is so Revolutionary!
 
-Python Strings are immutable. Lists are mutable. But like lists, strings can be accessed via index, but not modified.
+Python strings are immutable, which enables safe sharing between threads, string interning, memory optimizations, and stable hashing. Lists are mutable. But like lists, strings can be accessed via index, but not modified.
 Multiple line string literals known as Document Strings can be denoted with """, it can also be denoted with ''', but the convention is """. Writing Doc Strings is a good habit.
 The last character of string begins from -1. Just like Golang, we can slice strings using [:] syntax.
 For example: word[:2], word[0:2], word[2:5], word[4:]
@@ -236,3 +236,8 @@ Decorators:
 Positional & Keyword Args:
   We use the positional and keyword args. It's generally denoted with *args, **kwargs.
   We can use as many args and kwargs - Keyword Args as we want.
+
+Dunder methods:
+Context managers:
+Generators and iterators:
+Dataclasses:
