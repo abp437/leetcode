@@ -20,3 +20,15 @@ There are a common set of problems and algorithms which arise from the usage of 
   Network Flow
   Minimum Spanning Tree
   Connected Bridges
+
+Important Algos to cover:
+  Djikstra's
+  Bellman-Ford
+  Held-Karp
+  Tarjan's
+  Kosaraju's
+  Krushkal's
+  Dinic's
+  Edmond-Karp
+  Ford-Fulkerson
+  Floyd-Warshall
