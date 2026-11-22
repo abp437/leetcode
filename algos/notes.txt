@@ -1,0 +1,22 @@
+Firstly, I'm gonna mostly concentrate on Graphs.
+Graph is a data structure which is mostly important especially in the era of AI.
+We need to switch our thinking from Lists to Graphs, because all of the neural networks are in Graphs.
+The study involving Graphs is known as Graph Theory.
+The most important type of a graph is a Tree, then Trie.
+
+There are different types of Graphs:
+  Directed, Non Directed Graphs
+  Weighted, Non Weighted Graphs
+  Cyclic, Acyclic Graphs
+
+There are 3 ways to represent Graphs:
+  Adjacency Matrix
+  Adjacency List
+  Edge List
+
+There are a common set of problems and algorithms which arise from the usage of Graphs.
+  Find Shortest Path
+  Travelling Salesman Problem
+  Network Flow
+  Minimum Spanning Tree
+  Connected Bridges
