@@ -65,6 +65,41 @@ There's also this convention of using `__` before field names in getter and sett
     In Python, this commonly works through duck typing and method overriding.
     It's especially valuable for sub classes, where we have a base implementation of a method and then change the implementation based on the sub class requirements.
 
+Basic Python rules or conventions:
+  Python doesn't support method overloading as well as multiple constructors based on method signatures like Java does.
+  It simply resorts to separate methods with different names, single constructor with default values if needed.
+  However, it supports multiple inheritance.
+  Python relies heavily on decorators for adding OOP features such as @property, @abstractmethod
+
+Modules, Packages, Libraries:
+  A module is a single Python file (.py) containing code such as functions, classes, and variables:
+    import abc
+    import math
+  So, the abc module is actually a `abc.py` file in the standard library.
+
+  A package organizes multiple modules into a directory hierarchy:
+    from collections import Counter
+    from urllib.parse import urlparse
+  Here, the `collections` is a package and from that, we're importing the `Counter` class
+  Also, the `urllib` is a package inside it there's a `parse` module which has a function named `urlparse` in it.
+  So, the hierarchy is like this:
+    Package -> Multiple Modules(Python files) -> Module(Python file) -> Multiple classes, functions -> class/function to be used
+
+  A Library is reusable code like an external or third party which we have to typically install using pip or uv. Even the standard library is a library.
+
+Abstraction in Python:
+  Python doesn't have an explicit `abstract` keyword like Java does.
+  In order to support abstraction, Python does provide a `abc` module - Abstract Base Classes module which also provides us abstractmethod decorator.
+
+Public, Private, Protected access modifiers:
+  Python doesn't have public, private, protected access modifiers like Java.
+  Instead, it follows naming conventions to indicate the intended accessibility of attributes and methods.
+  But those are only conventions. Python doesn't enforce it.
+
+  Public: No leading underscores. Accessible from anywhere.
+  Protected: A single leading underscore (_).
+  Private: A double leading underscore (__).
+
 Duck Typing in Python, Ruby:
   The philosophy is:
     If it walks like a duck and quacks like a duck, it's a duck.
