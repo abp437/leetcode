@@ -69,7 +69,7 @@ Basic Python rules or conventions:
   Python doesn't support method overloading as well as multiple constructors based on method signatures like Java does.
   It simply resorts to separate methods with different names, single constructor with default values if needed.
   However, it supports multiple inheritance.
-  Python relies heavily on decorators for adding OOP features such as @property, @abstractmethod
+  Python relies heavily on decorators for adding OOP features such as @property, @abstractmethod, @staticmethod, @classmethod
 
 Modules, Packages, Libraries:
   A module is a single Python file (.py) containing code such as functions, classes, and variables:
@@ -100,15 +100,17 @@ Public, Private, Protected access modifiers:
   Protected: A single leading underscore (_).
   Private: A double leading underscore (__).
 
-Duck Typing in Python, Ruby:
+Interfaces, Duck Typing in Python, Ruby:
   The philosophy is:
     If it walks like a duck and quacks like a duck, it's a duck.
   In programming terms, we care about what an object can do, rather than its actual type or inheritance hierarchy.
+
   Interfaces are contracts which generally have a set of function signatures in them.
   Any class which implements that interface must have concrete implementations of all those methods defined in the interface.
   Python, just like Ruby doesn't have explicit `interface` or `implements` keywords, with the lack of those keywords, we have to rely on Duck Typing logic.
   Both languages support duck typing, where an object's suitability is determined by the operations it supports rather than by its declared type.
-  There are 2 things which Python provides to achieve this:
+
+  There are 2 things which Python provides to achieve interfaces:
     Protocol
     ABC - Abstract Base Class
 
