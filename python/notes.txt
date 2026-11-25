@@ -114,6 +114,20 @@ Interfaces, Duck Typing in Python, Ruby:
     Protocol
     ABC - Abstract Base Class
 
+Abstract Classes in Python:
+  Python provides Abstract Classes in Python using the abc module - which provides ABC - Abstract Base Class
+  That's basically an implementation of Abstract Class definition of OOP.
+  We can't instantiate an Abstract class directly, but it can be inherited by other classes.
+  Unlike interfaces, abstract classes can provide base concrete implementations of methods, that includes constructor and instance variables as well.
+  Whenever any class inherits from an abstract class, it has to implement all of it's methods, or decalre them as abstract methods so that it's subclasses can implement them.
+
+Protocols in Python:
+  Protocols are like structural contracts, between classes.
+  Unlike ABCs, we don't have to make classes inherit Protocol class, if any class implements a method specified in the Protocol class, it actually implicitly implements that structural interface.
+  Through Dynamic Dispatch it  works automatically in Python.
+  Single-method Protocols are quite common in Python, especially in well-designed libraries and applications that use dependency injection, callbacks, and extensible architectures.
+  That's how Duck typing is achieved in Python.
+
 C language integration:
   A powerful feature of Python is that we can write performance critical stuff in C and then integrate with Python programs!
   For Example, we have written basic calc functions in the file `basic_calc.c` then we have compiled it as a `.so` - Shared Object file and then called that as a library in Python.
